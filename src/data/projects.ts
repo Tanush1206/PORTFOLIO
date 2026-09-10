@@ -24,6 +24,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+  id: 'pokemon-tcg-move-prediction',
+  title: 'POKEMON_TCG_MOVE_PREDICTION',
+  description: `A move-prediction model for Pokémon TCG built on ~3.35M rows, using LightGBM trained with a LambdaRank objective to rank candidate moves rather than just classify them. Splits were built leakage-safe so no future-game information could bleed into training, and every design choice was checked against an ablation log rather than assumed — isolating which features actually drove performance. The result was a +0.054 accuracy gain over the baseline, arrived at through systematic ablation rather than one-shot tuning.`,
+  tags: ['PYTHON', 'LIGHTGBM', 'LAMBDARANK', 'FEATURE_ENGINEERING', 'ABLATION_STUDY', 'MODEL_EVALUATION'],
+  sourceUrl: 'https://github.com/Tanush1206/pokemon-tcg-move-prediction',
+  demoUrl: '#',
+  status: 'ML_Model',
+  pathLabel: 'SRC: /ml/pokemon-tcg-move-prediction',
+  layout: 'terminal', // New lead ML project: strongest quantified result, full-width row at top
+  },
+  {
     id: 'rag-based-ai',
     title: 'RAG_BASED_AI',
     description: `A fully offline Retrieval-Augmented QA pipeline that turns course videos into a searchable knowledge base and answers natural-language questions grounded strictly in retrieved transcript context — no external APIs, every model runs locally. The end-to-end flow chains ffmpeg audio extraction, timestamped Whisper transcription, chunking, and embedding generation via a local bge-m3 model, followed by top-k retrieval over cosine similarity. Chunk size and overlap were tuned against a manually labelled question set so retrieval quality was measured rather than assumed. Only the highest-scoring chunks reach a local deepseek-r1 LLM through Ollama, with prompts that constrain every answer to a cited video, title and timestamp — making responses traceable and hallucination-resistant by construction. A crash that surfaced only at scale was root-caused by profiling embedding batch sizes and fixed by restructuring requests into chunked batches.`,
