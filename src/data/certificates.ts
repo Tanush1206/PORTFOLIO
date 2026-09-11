@@ -12,6 +12,15 @@ export interface CertificateEntry {
 // the cards render in array order.
 export const certificates: CertificateEntry[] = [
   {
+    title: "Intermediate Machine Learning",
+    issuer: "Kaggle",
+    date: "SEP 2026",
+    id: "KAGGLE-INTERMEDIATE-ML-2026",
+    link: "/certs/Intermediate_Machine_Learning.png",
+    image: "/certs/Intermediate_Machine_Learning.png",
+    logo: "/certs/kaggle_logo.svg"
+  },
+  {
     title: "Advanced Learning Algorithms",
     issuer: "DeepLearning.AI · Stanford",
     date: "SEP 2026",
